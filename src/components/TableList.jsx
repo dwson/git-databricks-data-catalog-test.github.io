@@ -72,12 +72,18 @@ const TableList = () => {
                       <th>Column</th>
                       <th>Type</th>
                       <th>Description</th>
+                      <th>Join Logic with Other Tables</th>
                     </tr>
                   </thead>
                   <tbody>
                     {table.columns.map(col => {
                       const colKey = `${table.name}.${col.name}`;
                       const isJoinable = Boolean(joins[colKey]);
+                      let joinSummary = "-";
+                      if (isJoinable && joins[colKey] && joins[colKey].length > 0) {
+                        const join = joins[colKey][0];
+                        joinSummary = `Join with ${join.table}.${join.column}`;
+                      }
                       return (
                         <tr key={col.name}>
                           {isJoinable ? (
@@ -102,6 +108,7 @@ const TableList = () => {
                           )}
                           <td>{col.type}</td>
                           <td>{col.description}</td>
+                          <td>{joinSummary}</td>
                         </tr>
                       );
                     })}
