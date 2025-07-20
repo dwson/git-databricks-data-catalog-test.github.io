@@ -10,7 +10,10 @@ function App() {
     <div className="app-bg">
       <Header />
       <main>
-        <h2 className="luxury-title" style={{marginTop: 32}}>Entity Relationship Diagram & Data Tables</h2>
+        <div className="main-header-flex">
+          <div className="main-header-title left">Entity Relationship Diagram</div>
+          <div className="main-header-title right">Data Catalog</div>
+        </div>
         <div className="main-content-flex">
           <div className="main-content-er">
             <ERDiagram />
