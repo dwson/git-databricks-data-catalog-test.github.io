@@ -328,10 +328,16 @@ body, html, #root, .app-bg {
   text-decoration: underline;
   color: #fff;
   font-weight: 600;
-  transition: color 0.2s, background 0.2s;
+  transition: color 0.2s, background 0.2s, border 0.2s;
+  border-left: 4px solid #0072ce;
+  background: #111;
+  position: relative;
+  z-index: 1;
 }
 .clickable-column:hover, .clickable-column:focus {
-  color: #000;
-  background: #fff;
+  color: #fff;
+  background: linear-gradient(90deg, #0072ce22 0%, #111 100%);
   outline: none;
+  border-left: 6px solid #0072ce;
+  box-shadow: 0 0 0 2px #0072ce44;
 } 
