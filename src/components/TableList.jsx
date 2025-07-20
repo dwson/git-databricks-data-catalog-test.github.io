@@ -75,28 +75,36 @@ const TableList = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {table.columns.map(col => (
-                      <tr key={col.name}>
-                        <td
-                          className="clickable-column"
-                          onClick={e => {
-                            e.stopPropagation();
-                            handleColumnClick(table.name, col.name);
-                          }}
-                          tabIndex={0}
-                          onKeyDown={e => {
-                            if (e.key === "Enter" || e.key === " ") {
-                              e.stopPropagation();
-                              handleColumnClick(table.name, col.name);
-                            }
-                          }}
-                        >
-                          {col.name}
-                        </td>
-                        <td>{col.type}</td>
-                        <td>{col.description}</td>
-                      </tr>
-                    ))}
+                    {table.columns.map(col => {
+                      const colKey = `${table.name}.${col.name}`;
+                      const isJoinable = Boolean(joins[colKey]);
+                      return (
+                        <tr key={col.name}>
+                          {isJoinable ? (
+                            <td
+                              className="clickable-column"
+                              onClick={e => {
+                                e.stopPropagation();
+                                handleColumnClick(table.name, col.name);
+                              }}
+                              tabIndex={0}
+                              onKeyDown={e => {
+                                if (e.key === "Enter" || e.key === " ") {
+                                  e.stopPropagation();
+                                  handleColumnClick(table.name, col.name);
+                                }
+                              }}
+                            >
+                              {col.name}
+                            </td>
+                          ) : (
+                            <td>{col.name}</td>
+                          )}
+                          <td>{col.type}</td>
+                          <td>{col.description}</td>
+                        </tr>
+                      );
+                    })}
                   </tbody>
                 </table>
                 <a
