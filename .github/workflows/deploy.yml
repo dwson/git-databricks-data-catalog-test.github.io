@@ -18,6 +18,9 @@ jobs:
         with:
           node-version: 20
 
+      - name: Install npm react-flow-renderer
+        run: npm install react-flow-renderer
+
       - name: Install dependencies
         run: npm install
 
