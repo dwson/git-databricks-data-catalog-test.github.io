@@ -1,0 +1,117 @@
+body, html, #root, .app-bg {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  background: #181818;
+  color: #fff;
+}
+
+.luxury-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffd700;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-family: 'Montserrat', serif;
+}
+
+.table-list-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.table-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.table-card {
+  background: #232323;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+  border: 1.5px solid #ffd70044;
+  transition: box-shadow 0.3s;
+}
+.table-card:hover {
+  box-shadow: 0 8px 32px rgba(255,215,0,0.12);
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  cursor: pointer;
+  border-bottom: 1px solid #ffd70022;
+}
+.table-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffd700;
+  margin-right: 1.5rem;
+}
+.table-desc {
+  font-size: 1rem;
+  color: #fff;
+  opacity: 0.8;
+}
+.expand-icon {
+  font-size: 2rem;
+  color: #ffd700;
+  font-weight: 700;
+  transition: transform 0.2s;
+}
+
+.table-details {
+  padding: 1.5rem 2rem 2rem 2rem;
+  background: #1a1a1a;
+  border-radius: 0 0 18px 18px;
+  animation: fadeIn 0.4s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.columns-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.2rem;
+}
+.columns-table th, .columns-table td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid #ffd70022;
+  text-align: left;
+}
+.columns-table th {
+  color: #ffd700;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.script-link {
+  display: inline-block;
+  color: #ffd700;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid #ffd700;
+  transition: color 0.2s;
+}
+.script-link:hover {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+
+@media (max-width: 600px) {
+  .table-header, .table-details {
+    padding: 1rem;
+  }
+  .table-list-container {
+    padding: 1rem 0.2rem;
+  }
+} 
