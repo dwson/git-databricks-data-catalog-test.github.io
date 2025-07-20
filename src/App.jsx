@@ -14,11 +14,11 @@ function App() {
           <div className="main-header-title left">Entity Relationship Diagram</div>
           <div className="main-header-title right">Data Catalog</div>
         </div>
-        <div className="main-content-flex">
-          <div className="main-content-er">
+        <div className="main-content-flex same-height">
+          <div className="main-content-er same-height-child">
             <ERDiagram />
           </div>
-          <div className="main-content-table">
+          <div className="main-content-table same-height-child">
             <TableList />
           </div>
         </div>
